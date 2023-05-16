@@ -1,35 +1,21 @@
-import { navigation, page, maxPage, fetchCharacters } from "../../index.js";
 import { createPagination } from "../nav-pagination/nav-pagination.js";
 
-export function createButton() {
+let navigation = document.querySelector('[data-js="navigation"]');
+
+//export the pagination element, so that we can use it in the index.js
+export const pagination = createPagination();
+export function createButton(prevButtonFunction, nextButtonFunction) {
   const prevButton = document.createElement("button");
   prevButton.classList.add("button", "button--prev");
   prevButton.textContent = "previous";
   prevButton.setAttribute("data-js", "button-prev");
-  prevButton.onclick = prevButtonClick;
-
-  const pagination = createPagination();
-
+  //add click event to prev button
+  prevButton.onclick = prevButtonFunction;
   const nextButton = document.createElement("button");
   nextButton.classList.add("button", "button--next");
   nextButton.textContent = "next";
   nextButton.setAttribute("data-js", "button-next");
-  nextButton.onclick = nextButtonClick;
-
+  //add click event to next button
+  nextButton.onclick = nextButtonFunction;
   navigation.append(prevButton, pagination, nextButton);
 }
-
-function nextButtonClick() {
-  if (page.value < maxPage.value) {
-    page.value++;
-    fetchCharacters();
-  }
-}
-
-function prevButtonClick() {
-  if (page.value > 1) {
-    page.value--;
-    fetchCharacters();
-  }
-}
-
