@@ -15,10 +15,10 @@ export function createCharacterCard(
     <dl class="card__info">
       <dt class="card__info-title">status</dt>
       <dd class="card__info-description">${status}</dd>
-      <dt class="card__info-title">${type}</dt>
-      <dd class="card__info-description"></dd>
-      <dt class="card__info-title">${occurences}</dt>
-      <dd class="card__info-description">51</dd>
+      <dt class="card__info-title">type</dt>
+      <dd class="card__info-description">${type}</dd>
+      <dt class="card__info-title">occurences</dt>
+      <dd class="card__info-description">${occurences}</dd>
     </dl>
   </div>`;
   return li;
