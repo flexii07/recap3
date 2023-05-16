@@ -17,7 +17,7 @@ export function createCharacterCard(
       <dd class="card__info-description">${status}</dd>
       <dt class="card__info-title">type</dt>
       <dd class="card__info-description">${type}</dd>
-      <dt class="card__info-title">occurences</dt>
+      <dt class="card__info-title">occurrences</dt>
       <dd class="card__info-description">${occurences}</dd>
     </dl>
   </div>`;
